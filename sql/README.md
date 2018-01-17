@@ -192,5 +192,12 @@ ADD COLUMN {{ kolom naam }} {{ nieuw data type }}
 Santex
 ```
 ALTER TABLE {{ tabel naam }}
-DROP COLUMN {{ kolom naam }} {{ nieuw data type }}
+DROP COLUMN {{ kolom naam }}
+```
+
+### Primary key toevoegen aan table
+Santex
+```
+ALTER TABLE {{ table naam }}
+ADD PRIMARY KEY( {{ kolom naam }} )
 ```
