@@ -24,12 +24,12 @@ SELECT * FROM klacht WHERE postcode = '1098LV'
 
 operator | wat is het
 --- | ---
-= | is gelijk aan
-<> | is NIET gelijk aan
->	| is groter dan
-<	| is klijner dan
->= |is groter dan en/of gelijk aan
-<= |is klijner dan en/of gelijk aan
+"=" | is gelijk aan
+"<>" | is NIET gelijk aan
+">"	| is groter dan
+"<"	| is klijner dan
+">=" |is groter dan en/of gelijk aan
+"<=" |is klijner dan en/of gelijk aan
 
 
 ### selecteer alle dingen tussen 2 waardes:
