@@ -1,5 +1,10 @@
 # SQL cheat sheets
 
+## INTRO
+- Vervang alle {{ een hint }} met wat voor jou van toepassing is zie voorbeelden voor meer info
+- Heb je surgesties voor deze readme open dan een [github issue](https://github.com/mjarkk/school-stuff/issues)
+- Wil je dingen veranderen maak een fork van deze repo en doe een fork request als je klaar bendt
+
 ### selecteer alle dingen van 1 tabel:  
 Santex
 ```
@@ -195,9 +200,16 @@ ALTER TABLE {{ tabel naam }}
 DROP COLUMN {{ kolom naam }}
 ```
 
-### Primary key toevoegen aan table
+### Primary key toevoegen aan tabel
 Santex
 ```
 ALTER TABLE {{ table naam }}
 ADD PRIMARY KEY( {{ kolom naam }} )
+```
+
+### Verwijder key van tabel
+Santex
+```
+ALTER TABLE {{ table naam }}
+DROP PRIMARY KEY( {{ kolom naam }} )
 ```
