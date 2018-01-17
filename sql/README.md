@@ -165,7 +165,7 @@ Santex
 DROP DATABASE {{database naam}}
 ```
 
-##2.6
+## 2.6
 
 ### Hernoem tabel:
 Santex
