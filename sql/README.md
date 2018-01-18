@@ -213,3 +213,28 @@ Santex
 ALTER TABLE {{ table naam }}
 DROP PRIMARY KEY( {{ kolom naam }} )
 ```
+
+## 2.7
+### Geef ander naam aan ouptput rij
+Santex
+```
+SELECT {{ naam van rij }} AS {{ naan van ouput rij }}
+FROM {{ database naam }}
+```
+Voorbeeld
+```
+SELECT MAX(prijs) AS hoogsteprijs
+FROM prijsendatabase
+```
+
+### verbind meerde gettallen aan elkaar
+Santex
+```
+SELECT CONCAT( {{ input, 2de input, 2de, .... }} ) AS {{ naam van output rij }}
+FROM {{ database naam }}
+```
+Voorbeeld
+```
+SELECT CONCAT( voornaam, " ", achernaam ) AS fullname
+FROM mensen
+```
