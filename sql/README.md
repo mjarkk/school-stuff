@@ -76,7 +76,7 @@ INNER JOIN klachtsoort
 ON klacht.ID_klachtsoort = klachtsoort.ID
 ```
 
-### HELP! wat is RIGHT, LEFT, FULL (INNER JOIN)
+### Meer info over inner, left, right, full joins [HIER](https://stackoverflow.com/questions/5706437/whats-the-difference-between-inner-join-left-join-right-join-and-full-join)
 
 ### UPDATE getal in rij
 Santex
