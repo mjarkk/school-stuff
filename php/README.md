@@ -11,7 +11,7 @@
 
 ### Method 2 (nginx),
 - Clone the project
-- Add a virtual host to you'r nginx config file or sites-available  
+- Add a location to you'r nginx config file or sites-available  
 - demo:
 ```
 location /php/ {
@@ -26,3 +26,6 @@ location /php/ {
 ### Method 3,
 - Make a soft link from the PHP folder to a folder in your local web server (this might not work on windows)
 - On linux make sure to `chmod 777` the linked folder in order to prevent `403 Forbidden`.
+
+## Recommended:
+- install [h5ai](https://larsjung.de/h5ai/) to have a better file list
