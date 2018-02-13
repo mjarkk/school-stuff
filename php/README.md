@@ -27,5 +27,5 @@ location /php/ {
 - Make a soft link from the PHP folder to a folder in your local web server (this might not work on windows)
 - On linux make sure to `chmod 777` the linked folder in order to prevent `403 Forbidden`.
 
-## Recommended:
+## After install recommended things:
 - install [h5ai](https://larsjung.de/h5ai/) to have a better file list
