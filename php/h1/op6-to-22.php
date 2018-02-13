@@ -3,9 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 6 to 22</title>
+    <link rel="stylesheet" href="../other/css/main.css">
   </head>
   <body>
     <?php
+      /*
+      functions used:
+      array()
+      print_r()
+      var_dump()
+      unset()
+      array_key_exists()
+      in_array()
+      array_search()
+      array_push()
+      array_pop()
+      array_shift()
+      array_unshift()
+      array_rand()
+      array_walk()
+      implode()
+      explode()
+      object arrays
+      array_walk_recursive()
+      array_merge() 
+      */
+
       // a wrapper around echo "<br><br> $some_text <br>"
       function addBr($input) {
         echo "<br><br> $input <br>";

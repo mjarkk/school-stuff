@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>lab2</title>
+    <link rel="stylesheet" href="../other/css/main.css">
   </head>
   <body>
     <h3>PHP lab 3</h3>

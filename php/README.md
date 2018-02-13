@@ -3,7 +3,7 @@
 ## INTRO
 - If you have surgestions for this repo create a [github issue](https://github.com/mjarkk/school-stuff/issues)
 - If you wan't to change code fork this repo after you'r dune do a pull request.
-- The assignments here came from: [MBO-ICT Backend programmeren](https://www.bol.com/nl/p/mbo-ict-backend-programmeren/9200000056845953/)
+- The assignments came from: [MBO-ICT Backend programmeren](https://www.bol.com/nl/p/mbo-ict-backend-programmeren/9200000056845953/)
 
 ## How to install/use:
 
