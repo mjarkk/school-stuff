@@ -60,7 +60,7 @@ gulp.task('stylus', () => {
     .on('error', (err) => log(err.message))
 })
 
-// create a werbser only when a user want's the live reload
+// create a webserver only when a user want's the live reload
 gulp.task('createwebserver', () => {
   const app = express()
 
