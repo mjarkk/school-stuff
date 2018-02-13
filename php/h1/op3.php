@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>variables</title>
+    <title>Assignment 3</title>
   </head>
   <body>
     <?php
 
-      // werkt:
+      // works:
       $auto2 = true;
       $nav = true;
       $n_a_w = true;
 
-      // werkt niet:
+      // Doesn't work:
       // $auto's = true
       // $auto/onderdelen
       // $thuis&thuin
@@ -20,7 +20,7 @@
       // $n-a-w
       // $22
       // $$
-      
+
     ?>
   </body>
 </html>
