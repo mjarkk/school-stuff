@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Opdracht 5</title>
+    <title>Assignment 5</title>
   </head>
   <body>
     <?php

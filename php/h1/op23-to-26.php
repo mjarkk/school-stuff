@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Assignment 1</title>
+    <title>Assignment 23 to 26</title>
   </head>
   <body>
     <?php
-      echo "deze tekst weergeven! LOLZ";
+      
     ?>
   </body>
 </html>
