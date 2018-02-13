@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 27</title>
-    <link rel="stylesheet" href="../other/css/main.css">
+    <?php include '../other/addcustomdata.php';?>
   </head>
   <body>
     <form action="op27.getdata.php" method="post">

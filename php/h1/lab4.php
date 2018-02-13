@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Lab 4</title>
-    <link rel="stylesheet" href="../other/css/main.css">
+    <?php include '../other/addcustomdata.php';?>
   </head>
   <body>
     <?php

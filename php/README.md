@@ -37,3 +37,4 @@ location /php/ {
 
 ## After install recommended things:
 - Install [h5ai](https://larsjung.de/h5ai/) on the local web server to have a better file list
+- For a better development process use the DEV server with: `gulp dev` this server will refresh PHP pages when there are changes in the code.

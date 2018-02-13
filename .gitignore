@@ -60,3 +60,4 @@ typings/
 # added myself
 **/node_modules
 php/other/css/*
+php/other/compiled-js/*

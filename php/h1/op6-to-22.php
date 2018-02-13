@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Assignment 6 to 22</title>
-    <link rel="stylesheet" href="../other/css/main.css">
+    <?php include '../other/addcustomdata.php';?>
   </head>
   <body>
     <?php
@@ -26,7 +26,7 @@
       explode()
       object arrays
       array_walk_recursive()
-      array_merge() 
+      array_merge()
       */
 
       // a wrapper around echo "<br><br> $some_text <br>"
