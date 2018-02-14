@@ -9,12 +9,14 @@ const browserify = require('browserify')
 const babelify = require('babelify')
 const source = require('vinyl-source-stream')
 const connect = require('gulp-connect')
+const chokidar = require('chokidar')
+const path = require('path')
 
 // a warpper around console.log
 const log = console.log
 
 // check if there are files changed
-let changedFiles = false
+let changedFiles = []
 
 // transform the js files to es2015 and add the imports
 gulp.task('js', () => {
@@ -71,25 +73,36 @@ gulp.task('createwebserver', () => {
     res.json({
       status: changedFiles
     })
-    changedFiles = false
+    changedFiles = []
   })
 
   // check if the serv
   app.listen(3030, () =>
     log('watch server is live')
   )
+
 })
 
 // add files to watch to list
 gulp.task('addwatchfiles', () => {
-  changedFiles = true
+  changedFiles.push(true)
 })
 
 // watch the files for auto compiling
 gulp.task('watch', () => {
   gulp.watch('./other/stylus/*.sass', ['stylus','addwatchfiles'])
   gulp.watch('./other/js/*.js', ['js','addwatchfiles'])
-  gulp.watch('./h1/*', ['addwatchfiles'])
+
+  let watcher = chokidar.watch(path.resolve(__dirname, './h1/'), {
+    persistent: true,
+    ignored: /(^|[\/\\])\../
+  })
+
+  watcher.on('all', (ev, path) => {
+    if (ev == 'change') {
+      changedFiles.push(path)
+    }
+  })
 })
 
 gulp.task('dev', ['stylus','js','watch','createwebserver']);

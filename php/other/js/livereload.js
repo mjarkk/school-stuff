@@ -11,7 +11,7 @@ let main = () => setTimeout(() => {
     if (dev) {
       log(jsondata)
     }
-    if (jsondata.status) {
+    if (jsondata.status.length > 0) {
       location.reload()
     } else {
       main()
