@@ -38,16 +38,24 @@
           </td>
         </tr>
         <tr>
-          <td>Send: <input type="submit" name="submit" value="Submit"></td>
+          <td>
+            payment:
+            <select name="payment">
+              <option value="paypal" selected="selected">Paypal</option>
+              <option value="visa">Visa</option>
+              <option value="mastercard">Mastercard</option>
+              <option value="ideal">Ideal</option>
+            </select>
+            <input type="submit" name="submit" value="pay">
+          </td>
         </tr>
       </form>
     </table>
     <div class="rest">
       <?php
-        if ($_POST["submit"]) {
+        if (isset($_POST["submit"])) {
           echo "<h2>Data sended to the server</h2>";
           echo json_encode($_POST);
-
         }
       ?>
     </div>
