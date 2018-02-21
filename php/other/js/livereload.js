@@ -1,3 +1,6 @@
+// In this file you can use imports as long as the package is added to node_modules
+// this file will be also compiled using babel
+
 // import * as _ from 'underscore'
 
 const dev = false;
