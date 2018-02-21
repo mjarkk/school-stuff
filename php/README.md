@@ -22,12 +22,9 @@
 - Add a location to you'r nginx config file or sites-available  
 - demo:
 ```
-location /php/ {
-
-    root /url/to/school-stuff;
-    # replace `/url/to/school-stuff` with the path to the root of this repo
-
-    try_files $uri $uri/ =404;
+location /php {
+    alias /url/to/school-stuff/php;
+    # replace `/url/to/school-stuff/php` with the path to the php folder in this repo
 }
 ```
 
