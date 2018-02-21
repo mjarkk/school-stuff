@@ -14,7 +14,7 @@
 - type: `gulp`
 
 ### Use the webserver
-### Method 1,
+### Method 1 (easiest),
 - Clone this git repo to your local web server
 
 ### Method 2 (nginx),
