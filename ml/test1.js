@@ -1,3 +1,7 @@
+// WAHT IS THIS?
+// this is a canvas with 1 perceptron that guesses where the dot is
+// if it guesses the dot postion write relavant to the line it will be colored green
+
 const log = console.log
 
 const size = 500
@@ -42,13 +46,14 @@ class Perceptron {
   }
   // train with input data
   train(inputs, target) {
-    let guess = this.guess(inputs).full // first guess the output
-    let error = target - guess
+    let guess = this.guess(inputs) // first guess the output
+    let error = target - guess.sign // create a error rate
     // tune the weights
-    this.weights = this.weights.map(el =>
-      el * error * this.learningRate
+    this.weights = this.weights.map((el, index) =>
+      el + (inputs[index] * error * this.learningRate)
     )
-    return {error: error, ...guess}
+    let returnData = {error: error, ...guess}
+    return returnData
   }
   // sign a value
   sign(input) {
@@ -71,25 +76,34 @@ let perceptron = new Perceptron({
 
 function setup() {
   createCanvas(size,size)
-  let inputs = [-1,0.5]
 }
 
 function draw() {
+
+  // the basic p5 stuff
   background(255)
   stroke(0)
+
+  // add a line to give some visual feedback
   line(0,0,size,size)
+
   let pointsArr = Array(200) // create an array
   .fill(0) // fill the array with data so i can use .map
-  .map(el => new Point()) // create an new point for each array item
-  pointsArr.map(el => el.render()) // render the point
+  .map(el => new Point()) // create an new point   for each array item
+
+  pointsArr.map(el => el.render()) // render the points
+
   let train = () =>
     pointsArr.map(el =>
       perceptron.train([
-        el.x / size * 2 - 1,
-        el.y / size * 2 - 1, 1
+        el.x / size * 2 - 1, // convert the position to a value between -1 and 1
+        el.y / size * 2 - 1,
+        1 // the bias
       ], el.label)
     )
-  Array(1).fill(0).map(train) // train the array amound * 100
+  Array(1).fill(0).map(train) // change the `1` to the amound of training times the amound of pointss
+
+  // render the output of the ml tests to the canvas
   pointsArr.map(el => {
     let guess = perceptron.guess([
       el.x / 255 - 1,
@@ -98,9 +112,9 @@ function draw() {
     ])
     stroke(0)
     if (el.label == guess.sign) {
-      fill('green')
+      fill('green') // this means the dot is write
     } else {
-      fill('red')
+      fill('red') // this means the the dot is not write
     }
     ellipse(el.x,el.y,10,10)
   })
