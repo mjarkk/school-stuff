@@ -83,12 +83,12 @@ function draw() {
   .map(el => new Point()) // create an new point for each array item
   pointsArr.map(el => el.render()) // render the point
   let train = () =>
-    pointsArr.map(el =>{
+    pointsArr.map(el =>
       perceptron.train([
         el.x / size * 2 - 1,
         el.y / size * 2 - 1, 1
       ], el.label)
-    })
+    )
   Array(1).fill(0).map(train) // train the array amound * 100
   pointsArr.map(el => {
     let guess = perceptron.guess([
