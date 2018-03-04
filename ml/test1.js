@@ -2,7 +2,10 @@
 // this is a canvas with 1 perceptron that guesses where a dot is relavant to a line.
 // if it is correct the dot will be colored green
 
-const drawLine = [
+const interactive = false // the line will move automaticly on the canvas
+let drawLineDirection = true
+
+const drawLine = [ // position of the line
   0, 500,
   300, 0
 ]
@@ -81,26 +84,46 @@ class Perceptron {
 // create a perceptron
 let perceptron = new Perceptron({
   inputs: 2
+  // the Perceptron will create the inputs + 1 because it will add bias as last item
 })
 
-function setup() {
+setup = () => {
+  // create a canvas to use
   createCanvas(size,size)
 }
 
-function draw() {
+customLoop = () => {
+  if (interactive) {
+    setTimeout(() => {
+      if (drawLine[2] == 500) {
+        drawLineDirection = false
+      }
+      if (drawLine[2] == 50) {
+        drawLineDirection = true
+      }
+      if (drawLineDirection) {
+        drawLine[2] += 10
+      } else {
+        drawLine[2] -= 10
+      }
+      redraw()
+    }, 100)
+  }
+}
+
+// the draw function from p5 this will exsecute automaticly
+draw = () => {
 
   // the basic p5 stuff
   background(255)
   stroke(0)
 
-  // add a line to give some visual feedback
+  // add a line to give some visual feedback where the errors probably are
   line(...drawLine)
 
-  let pointsArr = Array(200) // create an array
+  let pointsArr = Array(500) // create an array
   .fill(0) // fill the array with data so i can use .map
   .map(el => new Point()) // create an new point   for each array item
-
-  pointsArr.map(el => el.render()) // render the points
 
   let train = () =>
     pointsArr.map(el =>
@@ -114,6 +137,7 @@ function draw() {
 
   // render the output of the ml tests to the canvas
   pointsArr.map(el => {
+    el.render() // render the points
     let guess = perceptron.guess([
       el.x / 255 - 1,
       el.y / 255 - 1,
@@ -121,11 +145,17 @@ function draw() {
     ])
     stroke(0)
     if (el.label == guess.sign) {
-      fill('green') // this means the dot is write
+       // this means the dot is write
+      if (el.label == 1) {
+        fill('purple')
+      } else {
+        fill('yellow')
+      }
     } else {
       fill('red') // this means the the dot is not write
     }
     ellipse(el.x,el.y,10,10)
   })
   noLoop() // don't loop the code
+  customLoop()
 }
