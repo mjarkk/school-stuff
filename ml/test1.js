@@ -1,6 +1,6 @@
 // WAHT IS THIS?
-// this is a canvas with 1 perceptron that guesses where the dot is
-// if it guesses the dot postion write relavant to the line it will be colored green
+// this is a canvas with 1 perceptron that guesses where a dot is relavant to a line.
+// if it is correct the dot will be colored green
 
 const drawLine = [
   0, 500,
