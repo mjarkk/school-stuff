@@ -2,6 +2,15 @@
 // this is a canvas with 1 perceptron that guesses where the dot is
 // if it guesses the dot postion write relavant to the line it will be colored green
 
+const drawLine = [
+  0, 500,
+  300, 0
+]
+
+let getLabel = (x,y) => {
+  let check2 = (drawLine[2] / (drawLine[1] / (drawLine[1] - y)))
+  return (x < check2) ? 1 : -1
+}
 const log = console.log
 
 const size = 500
@@ -10,7 +19,7 @@ class Point {
   constructor(input) {
     this.y = Math.round(Math.random() * size)
     this.x = Math.round(Math.random() * size)
-    this.label = (this.x > this.y) ? 1 : -1
+    this.label = getLabel(this.x,this.y)
   }
   render () {
     stroke(0)
@@ -85,7 +94,7 @@ function draw() {
   stroke(0)
 
   // add a line to give some visual feedback
-  line(0,0,size,size)
+  line(...drawLine)
 
   let pointsArr = Array(200) // create an array
   .fill(0) // fill the array with data so i can use .map
@@ -101,7 +110,7 @@ function draw() {
         1 // the bias
       ], el.label)
     )
-  Array(1).fill(0).map(train) // change the `1` to the amound of training times the amound of pointss
+  Array(100).fill(0).map(train) // change the `100` to the amound of training times the amound of pointss
 
   // render the output of the ml tests to the canvas
   pointsArr.map(el => {
