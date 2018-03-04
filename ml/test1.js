@@ -44,7 +44,7 @@ class Perceptron {
       Math.random() * 2 - 1
     )
     this.weights.push(1)
-    this.learningRate = 0.1 // the learning rate
+    this.learningRate = 0.05 // the learning rate
   }
   // guess a output value
   guess(inputs) {
