@@ -12,46 +12,57 @@ Santex, Examples and links to commands
 - Replace all `< some text >` with data you wan't, don't forget to remove `<` and `>`
 - You can add extra data when `[? < some text > ]` is added
 
-## Show running Images:
+## Show running Images: `ps`
 - [LINK](https://docs.docker.com/engine/reference/commandline/ps/)
 - Santex: `docker ps`
 
-## Search for Image:
+## Search for Image: `search`
 - [LINK](https://docs.docker.com/engine/reference/commandline/search/)
 - Santex: `docker search < image name >`
 - Example: `docker search php`
 
-## Run image:
+## Run image: `run`
 - [LINK](https://docs.docker.com/engine/reference/run/)
 - Santex: `docker run < image name >`
 - Example: `docker run -d redis`
 - Example: `docker run -d --name redisHostPort -p 6379:6379 redis:latest`
 - Example: `docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis:latest`
-- Flags: run in background `-d`, port `-p <host-port>:<container-port>`, friendly name `--name <name>`, volumes `-v <host-folder>:<container-folder>`
+- Flags: run in background `-d`, port `-p <host-port>:<container-port>`, friendly name `--name <name>`, volumes `-v <host-folder>:<container-folder>`, Bind to network `--net=< network name >`
 
-## View mapping for port:
+## View mapping for port: `port`
 - [LINK](https://docs.docker.com/engine/reference/commandline/port/)
 - Santex: `docker port <container name> <port number>`
 - Example: `docker port redisDynamic 6379`
 
-## Kill container:
+## Kill container: `kill`
 - [LINK](https://docs.docker.com/engine/reference/commandline/kill/)
 - Santex: `docker kill <container>`
 - Example: `docker kill 69f335c0adff2f96689aba85d7d5cac11e96c4f6ed5a4d1f733a3ced2a96a0ca`
 
-## Remove container:
+## Remove container: `rm`
 - [LINK](https://docs.docker.com/engine/reference/commandline/rm/)
 - Santex: `docker rm <container>`
 - Example: `docker rm 69f335c0adff2f96689aba85d7d5cac11e96c4f6ed5a4d1f733a3ced2a96a0ca`
 
-## Use the ubuntu shell:
+## Use the ubuntu shell: `run -it`
 - Santex: `docker run -it ubuntu bash`
 
-## Run Dockerfile
+## Run Dockerfile: `build`
 - [LINK](https://docs.docker.com/engine/reference/commandline/build/)
 - Santex: `docker build <dockerfile location>`
 - Example: `docker build -t nginx-image:v1 .`
 - Flags: add name and version `-t <name>:v<version>`
+
+## Create network: `network cre..`
+- [LINK](https://docs.docker.com/engine/reference/commandline/network_create/)
+- Santex: `docker network create <name>`
+- Example: `docker network create backend-network`
+
+## Conect network: `network con..`
+- [LINK](https://docs.docker.com/engine/reference/commandline/network_connect/)
+- Santex: `docker network connect <network> <container>`
+- Example: `docker network connect frontend-network redis`
+- Flags: alias `--alias <name>`
 
 # Dockerfile
 About docker files
