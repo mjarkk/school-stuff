@@ -13,9 +13,14 @@ except NameError: pass
 
 prompt = '> '
 
-print ('Hi %s, I\'m the %s script.' % (user_name, script))
+print (f'Hi {user_name}, I\'m the the {script} script')
+# Also possible:
+# print ('Hi %s, I\'m the %s script.' % (user_name, script))
 print ('I\'d like to ask you a few questions.')
-print ('Do you like me %s?' % user_name)
+
+print(f'Do you like me {user_name}')
+# Also possible:
+# print ('Do you like me %s?' % user_name)
 likes = input(prompt)
 
 print ('where do you like %s?' % user_name)

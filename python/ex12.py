@@ -1,13 +1,15 @@
 # more inputs
 
-y = raw_input('Your name? ')
+print('Your name? ', end=' ')
 
-age = raw_input('How old are you? ')
-height = raw_input('How tall are you? ')
-weight = raw_input('How much do you weigh? ')
+y = input()
 
-print "So you're %s old, %s tall and %s heavy." % (
+age = input('How old are you? ')
+height = input('How tall are you? ')
+weight = input('How much do you weigh? ')
+
+print ("So you're %s old, %s tall and %s heavy." % (
   age, 
   height, 
   weight
-)
+))

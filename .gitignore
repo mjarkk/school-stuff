@@ -63,3 +63,4 @@ php/other/css/*
 php/other/compiled-js/*
 python/test*
 python/test
+python/__pycache__/*
