@@ -64,3 +64,4 @@ php/other/compiled-js/*
 python/test*
 python/test
 python/__pycache__/*
+.vscode
