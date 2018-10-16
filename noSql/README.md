@@ -163,13 +163,13 @@ Werkt goed samen met graphql
 ```
 [ # Server Data
 	{
-		_id: "sdfjosidf",
+		_id: "86f7e437faa5a7fce15d1ddcb9eaeaea377667b8",
 		username: "user 1",
 		voornaam: "foo",
 		achernaam: "bar"
 },
 	{
-		_id: "wesdfka",
+		_id: "e9d71f5ee7c92d6dc9e92ffdad17b8bd49418f98",
 		username: "user 2",
 		voornaam: "foo",
 		achernaam: "bar"
@@ -179,16 +179,17 @@ Werkt goed samen met graphql
 
 ```
 { # graphql query
-  user(_id: sdfjosidf) {
-username
+	user(_id: 86f7e437faa5a7fce15d1ddcb9eaeaea377667b8) {
+		username
+	}
 }
 ```
 
 ```
 [ # return data
 	{
-	username: "user 1" 
-}
+		username: "user 1" 
+	}
 ]
 ```
 
