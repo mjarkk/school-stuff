@@ -1,3 +1,5 @@
+NOTE: this was for a small presentation
+
 # NoSql
 
 This document contains some info about nosql and how it compares to sql
